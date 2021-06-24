@@ -1,10 +1,11 @@
 import requests
-api_key = 'YOUR API KEY'
+from decouple import config
+api_key = config('api_key')
 
 from flask import Flask,render_template
 from form import MyForm
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "4c56141824e5a25073d08e3cc531eb77"
+app.config['SECRET_KEY'] = config("SECRET_KEY")
 
 @app.route('/',methods=['GET','POST'])
 def home():

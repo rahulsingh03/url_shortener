@@ -1,0 +1,83 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: linear-gradient(to right,rgb(55, 122, 247),rgb(100, 150, 241), rgb(138, 226, 241));
+    overflow: hidden;
+}
+html{
+    font-size: 16px;
+}
+
+.container{
+    margin: 20% auto;
+    width: 80%;
+    text-align: center;
+}
+
+.urlbox{
+    height: 30px;
+    width:50%;
+    border: 2px rgb(248, 168, 21) solid;
+    border-radius: 10px;
+    box-shadow: 6px 6px 2px rgba(107, 13, 230, 0.2);
+    font-size:1.2rem;
+    padding:10px;
+    margin:20px;
+    outline:none;
+}
+
+.shoot{
+    height:40px;
+    width:80px;
+    background-color: white;
+    border:none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: rgb(100, 150, 241);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.submit{
+    cursor: pointer;
+    color:white;
+    
+}
+
+.shoot:hover{
+    background-color: rgb(150, 177, 228);
+    color:white;
+}
+
+.url{
+    margin:20px auto;
+    display:flex;
+    width: 20%;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    color:rgb(0, 0, 0);
+}
+
+hr{
+    margin-top:20px;
+}
+
+#myInput{
+    padding:10px;
+    border-radius:10px;
+    outline:none;
+    border:0px;
+    
+}
+.hidden{
+    display : none;
+    }
+.error, #newpost{
+    color:white;
+    font-size:1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

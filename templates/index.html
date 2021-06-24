@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="" id="myForm">
+            {{ form.hidden_tag() }}
+                    <div id='emptytext'>{{ form.url(class='urlbox') }}</div>
+            {{ form.submit(class="shoot") }}
+        </form>
+        <hr>
+        {% if shortened_url %}
+        <div class="url urlbox" style="border:None;">
+            <input type="text" value={{ shortened_url }} id="myInput" aria-hidden="true">
+            <i onclick="myFunction()" class="fas fa-copy submit"></i>
+        </div>
+        {% else %}
+            <div class='error'>{{ error }}</div>
+        {% endif %}
+        <div id="newpost" class="hidden">copied</div>
+        
+    </div>
+   
+    <script>
+        function myFunction() {
+            var copyText = document.getElementById('myInput');
+            var div = document.getElementById("newpost");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            var div = document.getElementById("newpost");
+            div.classList.toggle('hidden');
+            document.getElementById("url").value = '';        
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/668381c5f7.js" crossorigin="anonymous"></script>
+</body>
+</html>
